@@ -40,7 +40,6 @@ public class Database {
 
     public void save() throws IOException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
-            // Write a header line (optional)
             bw.write("id,name,company,email\n");
             Collections.sort(records, Comparator.comparingInt(r -> r.id));
             for (Record record : records) {
